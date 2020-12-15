@@ -20,6 +20,8 @@ export function ListMessage(props){
   
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        items.push(msn);
+        setItems(items);
         socket.emit("message",{message:msn, userId:JSON.parse(data) ,id:props.contactId});
         console.log("MESSAGE send");
     }
